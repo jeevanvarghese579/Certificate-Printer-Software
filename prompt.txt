@@ -1,0 +1,357 @@
+
+
+Build a complete production-ready web application using React 18 + Vite called "Certificate Printing Software".
+Technology Stack
+React 18
+Vite
+Tailwind CSS
+React DnD (drag and drop)
+Fabric.js or Konva.js (certificate designer canvas)
+PapaParse (CSV import/export)
+JSZip (JPEG ZIP export)
+html2canvas
+jsPDF
+LocalStorage for saving settings and templates
+Firebase Hosting ready
+The application must be fully responsive and modern with a clean school-office style UI.
+
+Software Name
+Certificate Printing Software
+
+Layout
+Use a modern dashboard layout.
+Left Navigation Sidebar
+Menu items:
+Enter Results
+Page Setup
+Print Certificate
+Settings
+The selected menu opens in the main workspace.
+
+PANEL 1: ENTER RESULTS
+Create a student data management system.
+Default Categories
+Show these columns by default:
+Student Name
+Item
+Reg No
+Class
+Position
+Grade
+Add Category
+Provide:
+Add Category button
+User can create unlimited custom categories
+Examples:
+House
+Club
+Teacher
+Event
+Team
+Score
+Student Records
+Allow:
+Add student
+Edit student
+Delete student
+Search students
+Use a table view.
+
+CSV IMPORT
+Provide Import CSV button.
+Requirements:
+Import CSV files
+Detect all columns automatically
+If CSV contains new columns not already present:
+Automatically create those categories
+Add them to the system
+Preserve all imported data
+Example:
+CSV contains:
+Student Name,Class,Grade,House
+House does not exist.
+System automatically creates:
+House
+and imports values.
+
+CSV EXPORT
+Provide Export CSV button.
+Exports:
+All categories
+All student records
+
+PANEL 2: PAGE SETUP
+Certificate template designer.
+
+Page Size
+Provide page size options:
+A4 Landscape
+A4 Portrait
+A3 Landscape
+A3 Portrait
+Letter
+Legal
+Custom Width
+Custom Height
+Store selection.
+
+Live Preview
+Show certificate page preview.
+Preview updates instantly.
+
+Template Designer
+User can add:
+Images
+Upload:
+PNG
+JPG
+JPEG
+SVG
+Images can be:
+moved
+resized
+rotated
+
+Text
+User can add static text.
+Examples:
+CERTIFICATE OF ACHIEVEMENT
+This is to certify that
+
+Text properties:
+font family
+font size
+bold
+italic
+underline
+color
+alignment
+
+Template Persistence
+Template remains same for all students.
+Save template automatically to LocalStorage.
+
+PANEL 3: PRINT CERTIFICATE
+This is the certificate generation screen.
+
+Layout
+Left side:
+Certificate preview canvas.
+Right side:
+Dynamic Fields Panel.
+
+Dynamic Fields Panel
+Show all available categories.
+Example:
+Student Name
+Class
+Reg No
+Position
+Grade
+Item
+House
+Teacher
+Club
+etc.
+
+Drag and Drop
+User drags a field into certificate.
+Example:
+Drag:
+Student Name
+onto certificate.
+System creates dynamic placeholder:
+{{Student Name}}
+at that position.
+
+Field objects should:
+Move
+Resize
+Rotate
+Delete
+
+Student Selection
+Dropdown:
+Select Student
+Preview updates instantly using selected student data.
+Example:
+{{Student Name}}
+becomes
+John Thomas
+
+BULK CERTIFICATE GENERATION
+Generate certificates for all students.
+
+Export PDF
+Button:
+Print as PDF
+Requirements:
+One page per student
+Uses selected page size
+PDF dimensions exactly match Page Setup
+High quality export
+
+Export JPEG
+Button:
+Download as JPEG
+Requirements:
+Generate JPEG certificate for every student
+High resolution
+Place all JPEG files into ZIP archive
+Download ZIP automatically
+Use JSZip.
+
+SETTINGS PANEL
+Create settings page.
+
+Universal Undo
+Button:
+Undo
+Works globally.
+
+Universal Redo
+Button:
+Redo
+Works globally.
+
+Full Reset
+Button:
+Reset Everything
+When clicked:
+Show confirmation dialog:
+"Are you sure you want to permanently delete all saved data, templates and settings?"
+Options:
+Cancel
+Reset
+If confirmed:
+Clear:
+LocalStorage
+Students
+Categories
+Templates
+Settings
+
+About Section
+Display exactly:
+Developed By
+Jeevan Varghese
+St.Gemma's Girls' HSS Malappuram
+itsjeevanvarghese.web.app
+Visit this website to get more school softwares.
+Make website clickable and open in new tab.
+
+Local Storage Requirements
+Save locally:
+Student records
+Categories
+Template design
+Page setup
+User preferences
+Restore automatically when application loads.
+No login system.
+No cloud database.
+
+Firebase Hosting
+Prepare application for Firebase Hosting deployment.
+Include:
+firebase.json
+Recommended commands:
+npm run build
+firebase deploy
+Provide complete deployment instructions.
+
+UI Requirements
+Modern design.
+Use:
+Tailwind CSS
+Rounded cards
+Soft shadows
+Light theme
+Dark theme toggle
+Professional school-office appearance
+
+Code Quality
+Generate:
+Complete folder structure
+Reusable React components
+Context API or Zustand for state management
+TypeScript preferred
+Clean architecture
+Production-ready code
+Create every file needed and provide full source code without placeholders.
+
+
+Add this section to the prompt so the AI developer understands the storage architecture clearly:
+
+Data Storage Requirements (Important)
+This application must be a fully client-side application.
+Hosting
+The application itself is hosted on Firebase Hosting only.
+Firebase is used only for serving the website.
+Do NOT use:
+Firestore
+Realtime Database
+Firebase Authentication
+Firebase Storage
+Any backend server
+Any cloud database
+User Data Storage
+All user-created data must be stored locally in the user's browser using LocalStorage (or IndexedDB if needed for large templates).
+Store locally:
+Student records
+Categories
+Imported CSV data
+Certificate templates
+Uploaded images used in templates
+Dynamic field positions
+Page setup settings
+Theme preferences
+Application settings
+Undo/Redo history
+Privacy
+No student information is uploaded to any server.
+No student information leaves the user's device.
+All certificate generation happens in the browser.
+PDF generation happens locally.
+JPEG generation happens locally.
+ZIP creation happens locally.
+Offline Support
+The software should continue working after the first load even without internet access.
+Implement:
+Progressive Web App (PWA)
+Service Worker
+Asset caching
+Data Backup
+Export CSV:
+Exports all student records and categories.
+Import CSV:
+Restores student records.
+Automatically creates any new categories found in the CSV.
+Template Backup
+Add:
+Export Template (.json)
+Import Template (.json)
+This allows transferring certificate designs between computers while keeping everything offline.
+Firebase Hosting Configuration
+Firebase Hosting is only used to publish the React app.
+Architecture:
+User Browser
+↓
+React + Vite App
+↓
+LocalStorage / IndexedDB
+↓
+PDF/JPEG Generation in Browser
+No database connection is required.
+First Run
+On first launch:
+Create default categories:
+Student Name
+Item
+Reg No
+Class
+Position
+Grade
+After that, all changes are saved automatically in the browser.
+
+This ensures the software behaves like a desktop application running in the browser, while Firebase only serves the app files.

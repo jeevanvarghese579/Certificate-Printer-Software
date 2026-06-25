@@ -1,0 +1,16 @@
+1.2
+place full screen button of certificate preview on bottom right
+panel to change properties of dynaic text should be present in print certificate panel as well
+
+
+1.3 bolt
+changing font is not changing in generated pdf for dynamic fields and inserted text. fix it
+THE generated pdf and certificate preview are not identical. size is not correct. the contents are also missing in pdf
+
+1.4 bolt jstgemmas
+in full screen view of certificate preview, image properties box and dynamic text box should be present 
+in certificate preview, i cannot select images or text on clicking. also when they are clicked, resize bars on all corners and sides are not wokring
+
+1.5 bolt jstgemmas
+in full screen view of certificate preview, insert image and text box should be present 
+in field properties, font size is not comlpeted deleted using backspace. fix it

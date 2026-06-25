@@ -1,0 +1,27 @@
+
+create a modern certificate printing softare using react and vite
+name of software: Certificate Printing Software
+
+ sides panel 1-
+  enter results- student names, items, reg no, class, position, grade are seen default. but option to add more categories is present.
+export import buttons are present in top right. exported and imported as csv files. if imported csv have a new catgory, it is added automatically while importing.
+
+side panel 2- page setup- sets the size of printing page, 
+show preview of page in this panel
+can upload png jpeg vectors from device and insert in this page, can type text in this page. this page stays as template for all the students
+
+side panel 3- print certificate - 
+a preview of page is seen with templates. there is a right panel which shows type of details entered in results. user can drag and drop these into preview page so that that cateory is dynamically added in that position.
+
+print as pdf button and download as jpeg button seen below. if exported as jpeg, it is donwlaoded as zip file. if exported as pdf, the size of pdf should be as set in page setup.
+
+settings side panel in left.
+settings shows universal back and restore buttons
+full reset button that asks for confirmation before resetting all
+about- 
+Developed by Jeevan Varghese
+St.Gemma's Girls' HSS Malappuram
+itsjeevanvarghese.web.app. visit this website to get more school softwares
+
+
+software needs to be hosted to firebase. but the user settings are saved locally in browser.
